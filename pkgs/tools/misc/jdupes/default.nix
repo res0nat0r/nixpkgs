@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   makeFlags = "PREFIX=\${out}";
 
   meta = {
-    description = "A powerful duplicate file finder and an enhanced fork of 'fdupes'.";
+    description = "A powerful duplicate file finder and an enhanced fork of 'fdupes'";
     longDescription = ''
       jdupes is a program for identifying and taking actions upon duplicate
       files. This fork known as 'jdupes' is heavily modified from and improved
