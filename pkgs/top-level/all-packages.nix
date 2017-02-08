@@ -13301,6 +13301,8 @@ with pkgs;
   fbida = callPackage ../applications/graphics/fbida { };
 
   fdupes = callPackage ../tools/misc/fdupes { };
+  
+  jdupes = callPackage ../tools/misc/jdupes { };
 
   feh = callPackage ../applications/graphics/feh { };
 
@@ -18046,4 +18048,5 @@ with pkgs;
   hy = callPackage ../development/interpreters/hy {};
 
   ghc-standalone-archive = callPackage ../os-specific/darwin/ghc-standalone-archive { inherit (darwin) cctools; };
+
 }
