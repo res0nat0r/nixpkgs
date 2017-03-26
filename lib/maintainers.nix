@@ -427,6 +427,7 @@
   regnat = "Théophane Hufschmitt <regnat@regnat.ovh>";
   relrod = "Ricky Elrod <ricky@elrod.me>";
   renzo = "Renzo Carbonara <renzocarbonara@gmail.com>";
+  res0nat0r = "Stefhen Hovland <stefhen.hovland@gmail.com>"; 
   retrry = "Tadas Barzdžius <retrry@gmail.com>";
   rick68 = "Wei-Ming Yang <rick68@gmail.com>";
   rickynils = "Rickard Nilsson <rickynils@gmail.com>";

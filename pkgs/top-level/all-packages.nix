@@ -18418,4 +18418,6 @@ with pkgs;
   hy = callPackage ../development/interpreters/hy {};
 
   ghc-standalone-archive = callPackage ../os-specific/darwin/ghc-standalone-archive { inherit (darwin) cctools; };
+
+  gaffitter = callPackage ../tools/misc/gaffitter {};
 }
