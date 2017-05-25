@@ -37,6 +37,7 @@
 , "nijs"
 , "node2nix"
 , "node-gyp"
+, "node-gyp-build"
 , "node-inspector"
 , "node-pre-gyp"
 , "nodemon"
