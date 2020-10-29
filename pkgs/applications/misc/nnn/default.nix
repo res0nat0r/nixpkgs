@@ -21,11 +21,19 @@ stdenv.mkDerivation rec {
 
   makeFlags = [ "DESTDIR=${placeholder "out"}" "PREFIX=" ];
 
-  # shell completions
+  # shell completions and default plugins
   postInstall = ''
     install -Dm555 misc/auto-completion/bash/nnn-completion.bash $out/share/bash-completion/completions/nnn.bash
     install -Dm555 misc/auto-completion/zsh/_nnn -t $out/share/zsh/site-functions
     install -Dm555 misc/auto-completion/fish/nnn.fish -t $out/share/fish/vendor_completions.d
+    install -Dm555 misc/quitcd/quitcd.bash_zsh $out/share/nnn/quitcd/quitcd.bash_zsh
+    install -Dm555 misc/quitcd/quitcd.csh $out/share/nnn/quitcd/quitcd.csh
+    install -Dm555 misc/quitcd/quitcd.fish $out/share/nnn/quitcd/quitcd.fish
+
+    install -Dm555 plugins/* -t $out/share/nnn/plugins
+    install -Dm555 plugins/.[a-zA-Z-09]* -t $out/share/nnn/plugins
+
+    rm $out/share/nnn/plugins/README.md
   '';
 
   meta = {
