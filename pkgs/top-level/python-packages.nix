@@ -737,6 +737,8 @@ in {
 
   azure-synapse-accesscontrol = callPackage ../development/python-modules/azure-synapse-accesscontrol { };
 
+  azure-synapse-artifacts = callPackage ../development/python-modules/azure-synapse-artifacts { };
+
   azure-synapse-spark = callPackage ../development/python-modules/azure-synapse-spark { };
 
   b2sdk = callPackage ../development/python-modules/b2sdk { };
@@ -1198,6 +1200,8 @@ in {
 
   click-didyoumean = callPackage ../development/python-modules/click-didyoumean { };
 
+  click-help-colors = callPackage ../development/python-modules/click-help-colors { };
+
   click-log = callPackage ../development/python-modules/click-log { };
 
   click-plugins = callPackage ../development/python-modules/click-plugins { };
@@ -1376,6 +1380,8 @@ in {
     callPackage ../development/python-modules/cryptography/vectors-2.9.nix { }
   else
     callPackage ../development/python-modules/cryptography/vectors.nix { };
+
+  crytic-compile = callPackage ../development/python-modules/crytic-compile { };
 
   csscompressor = callPackage ../development/python-modules/csscompressor { };
 
@@ -1806,8 +1812,6 @@ in {
   dopy = callPackage ../development/python-modules/dopy { };
 
   dot2tex = callPackage ../development/python-modules/dot2tex { inherit (pkgs) graphviz; };
-
-  dotnetcore2 = callPackage ../development/python-modules/dotnetcore2 { inherit (pkgs) substituteAll dotnet-sdk; };
 
   dparse = callPackage ../development/python-modules/dparse { };
 
@@ -2468,6 +2472,8 @@ in {
 
   google_cloud_firestore = callPackage ../development/python-modules/google_cloud_firestore { };
 
+  google-cloud-iam = callPackage ../development/python-modules/google-cloud-iam { };
+
   google_cloud_iot = callPackage ../development/python-modules/google_cloud_iot { };
 
   google_cloud_kms = callPackage ../development/python-modules/google_cloud_kms { };
@@ -2555,6 +2561,10 @@ in {
   gpy = callPackage ../development/python-modules/gpy { };
 
   gpyopt = callPackage ../development/python-modules/gpyopt { };
+
+  gradient_sdk = callPackage ../development/python-modules/gradient_sdk { };
+
+  gradient_statsd = callPackage ../development/python-modules/gradient_statsd { };
 
   grammalecte = callPackage ../development/python-modules/grammalecte { };
 
@@ -2822,6 +2832,8 @@ in {
 
   hyperlink = callPackage ../development/python-modules/hyperlink { };
 
+  hyperopt = callPackage ../development/python-modules/hyperopt { };
+
   hypothesis_4 = callPackage ../development/python-modules/hypothesis/2.nix
     { }; # File name is called 2.nix because this one will need to remain for Python 2.
 
@@ -2920,6 +2932,8 @@ in {
   influxgraph = callPackage ../development/python-modules/influxgraph { };
 
   infoqscraper = callPackage ../development/python-modules/infoqscraper { };
+
+  inform = callPackage ../development/python-modules/inform { };
 
   iniconfig = callPackage ../development/python-modules/iniconfig { };
 
@@ -3996,6 +4010,8 @@ in {
 
   nest-asyncio = callPackage ../development/python-modules/nest-asyncio { };
 
+  nestedtext = callPackage ../development/python-modules/nestedtext { };
+
   netaddr = callPackage ../development/python-modules/netaddr { };
 
   netcdf4 = callPackage ../development/python-modules/netcdf4 { };
@@ -4272,7 +4288,7 @@ in {
 
   ovh = callPackage ../development/python-modules/ovh { };
 
-  ovito = toPythonModule (pkgs.libsForQt5.callPackage ../development/python-modules/ovito { pythonPackages = self; });
+  ovito = toPythonModule (pkgs.libsForQt5.callPackage ../development/python-modules/ovito { inherit python; });
 
   owslib = callPackage ../development/python-modules/owslib { };
 
@@ -4303,6 +4319,8 @@ in {
     callPackage ../development/python-modules/pandas { }
   else
     callPackage ../development/python-modules/pandas/2.nix { };
+
+  pandas-datareader = callPackage ../development/python-modules/pandas-datareader { };
 
   pandoc-attributes = callPackage ../development/python-modules/pandoc-attributes { };
 
@@ -4844,7 +4862,7 @@ in {
 
   pybullet = callPackage ../development/python-modules/pybullet { };
 
-  pycairo = callPackage ../development/python-modules/pycairo { inherit (pkgs) meson pkgconfig; };
+  pycairo = callPackage ../development/python-modules/pycairo { inherit (pkgs) meson pkg-config; };
 
   pycallgraph = callPackage ../development/python-modules/pycallgraph { };
 
@@ -5284,6 +5302,8 @@ in {
   pyparsing = callPackage ../development/python-modules/pyparsing { };
 
   pyparted = callPackage ../development/python-modules/pyparted { };
+
+  pypass = callPackage ../development/python-modules/pypass { };
 
   pypblib = callPackage ../development/python-modules/pypblib { };
 
@@ -6650,10 +6670,6 @@ in {
 
   smpplib = callPackage ../development/python-modules/smpplib { };
 
-  smugline = callPackage ../development/python-modules/smugline { };
-
-  smugpy = callPackage ../development/python-modules/smugpy { };
-
   snack = toPythonModule (pkgs.newt.override { inherit (self) python; });
 
   snakebite = callPackage ../development/python-modules/snakebite { };
@@ -6829,6 +6845,8 @@ in {
   sqlite3dbm = callPackage ../development/python-modules/sqlite3dbm { };
 
   sqlitedict = callPackage ../development/python-modules/sqlitedict { };
+
+  sqlite-utils = callPackage ../development/python-modules/sqlite-utils { };
 
   sqlmap = callPackage ../development/python-modules/sqlmap { };
 
@@ -7375,7 +7393,9 @@ in {
 
   unicode-slugify = callPackage ../development/python-modules/unicode-slugify { };
 
-  unicorn = callPackage ../development/python-modules/unicorn { };
+  unicorn = callPackage ../development/python-modules/unicorn {
+    unicorn-emu = pkgs.unicorn;
+  };
 
   unidecode = callPackage ../development/python-modules/unidecode { };
 
